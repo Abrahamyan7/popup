@@ -2,22 +2,14 @@ import { IoCloseOutline } from "react-icons/io5";
 import popup from "./../../Images/popup.png"
 import "./popup.css";
 import { useCallback, useState } from "react";
-import Notification from "../notification/notification";
-
-
-
 
 
 function Modal({setOpen, open, setAlertVisible}) {
     const [firstname, setFirstname] = useState("");
     const [username, setUsername] = useState("");
 
-
     const handleFormDataClick = useCallback(async () => {
-        // if (!isFormValid) return;
-    
         try {
-        //   setIsLoading(true);
           const response = await fetch("https://ssttoorree.ru/_receive_question_", {
             method: 'POST',
             headers: {
@@ -31,19 +23,14 @@ function Modal({setOpen, open, setAlertVisible}) {
 
           });
           if(response.ok ){
-            
             setOpen(false)
             setAlertVisible(true);
+            setFirstname("")
+            setUsername("")
           }
-        //   setIsLoading(false);
-         
-        //   setIsError(false);
         } catch (error) {
-        //   setIsLoading(false);
-        //   setIsError(true);
         }
       }, [username, firstname, setOpen]);
-
 
     function handleClick(event) {
         event.stopPropagation();
@@ -56,7 +43,6 @@ function Modal({setOpen, open, setAlertVisible}) {
         <div className={`${"Overlay"} ${open ? "show" : ""}`}
             onClick={() => setOpen(false)}
         >
-          
             <div className="app-modal" onClick={(event) => handleClick(event)}>
                 <div className="app-modal_icon">
                     <IoCloseOutline onClick={() => setOpen(!open)} />

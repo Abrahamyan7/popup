@@ -12,10 +12,9 @@ function App() {
     setAlertVisible(false)
   }
 
-
   return (
     <div className="App">
-     {isAlertVisible &&  <Notification  type="success" message="You are welcome" />  } 
+     {isAlertVisible &&  <Notification  type="success" message="Контакные данные записаны" />  } 
       <Popup open={open} setOpen={setOpen} isAlertVisible={isAlertVisible} setAlertVisible={setAlertVisible}/>
       <header className='header'></header>
       <div className='app-body'>

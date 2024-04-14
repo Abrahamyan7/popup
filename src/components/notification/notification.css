@@ -1,17 +1,16 @@
 .notification {
     position: fixed;
-    top: 5%;
-    left: -100%;
-    width: 100%;
+    top: -4%;
+    width: 40%;
     color: white;
     height: 40px;
-    transition: left 0.3s ease-in-out;
+    transition: left 1.3s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
 } 
 .visible {
-    left: 0;
+    top: 8%;
 }  
 .success {
     background-color: #28a745; 
