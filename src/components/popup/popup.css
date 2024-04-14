@@ -1,0 +1,352 @@
+.Overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.4s ease-in-out;
+}
+.app-modal {
+    position: relative;
+    width: 957px;
+    height: 576px;
+    border-radius: 20px;
+    padding: 25px 27px;
+    background-color: #F1F7FF;
+}
+.app-modal_icon svg {
+    border: 1px solid black;
+    font-size: 41px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.app-modal_container {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.app-undraw {
+    width: 407px;
+    height: 334px;
+}
+.app-undraw img {
+    width: 100%;
+    height: 100%;
+}
+.app-form {
+    width: 435px;
+    height: 432px;
+}
+.app-form .form-title {
+    font-family: Circe;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 58.96px;
+    text-align: right;
+    color: #214080;
+}
+.form-container {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.form-container input {
+    padding: 0 25px;
+    font-size: 20px;
+    width: 344px;
+    height: 74px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 0 #486DBC;
+}
+.first-input {
+    margin-bottom: 23px;
+}
+.form-text {
+    width: 328px;
+    margin: 32px 0 26px 0;
+    font-family: Circe;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 17.69px;
+    text-align: right;
+    color: #2954B1;
+}
+
+.form-btn {
+    width: 241px;
+    height: 65px;
+    padding: 15px 24px 15px 22px;
+    color: white;
+    background-color: #2954B1;
+    border: none;
+    border-radius: 13px;
+    font-family: Circe;
+    font-size: 24px;
+    line-height: 35.38px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.show {
+    opacity: 1;
+    z-index: 2;
+}
+@media screen and (max-width: 1440px) {
+    .app-modal {
+        height: 517px;
+    }
+    .app-modal_icon svg {
+        font-size: 30px;
+    }
+    .app-undraw {
+        width: 338px;
+        height: 285.7px;
+    }
+    .app-form {
+        height: 399px;
+    }
+    .app-form .form-title {
+        height: 44px;
+        font-size: 30px;
+    }
+    .first-input {
+        margin-bottom: 20px;
+    }
+    .form-container input {
+        width: 295px;
+        height: 63px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .app-modal {
+        width: 769px;
+        height: 463px;
+    }
+    .app-modal_icon svg {
+        font-size: 30px;
+    }
+    .app-undraw {
+        width: 327px;
+        height: 277px;
+    }
+    .app-form {
+        width: 350px;
+        height: 348px;
+    }
+    .form-container {
+        margin-top: 18px;
+    }
+    .app-form .form-title {
+        height: 47px;
+        font-family: Circe;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 47.17px;
+        text-align: right;
+    }
+    .first-input {
+        margin-bottom: 20px;
+    }
+    .form-container input {
+        width: 277px;
+        height: 60px;
+        box-shadow: 0 7px 0 #486DBC;
+    }
+    .form-text {
+        width: 328px;
+        margin: 25px 0 23px 0;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 14.74px;
+    }
+    .form-btn {
+        width: 194px;
+        height: 52px;
+        padding: 12px 19px 12px 20px;
+        font-size: 19px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .app-modal {
+        width: 582px;
+        height: 350px;
+    }
+    .app-modal_icon svg {
+        font-size: 25px;
+    }
+    .app-undraw {
+        width: 247px;
+        height: 209px;
+    }
+    .app-form {
+        width: 265px;
+        height: 263px;
+    }
+    .form-container {
+        margin-top: 15px;
+    }
+    .app-form .form-title {
+        width: 265px;
+        height: 36px;
+        font-family: Circe;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 35px;
+    }
+    .first-input {
+        margin-bottom: 17px;
+    }
+    .form-container input {
+        width: 210px;
+        height: 46px;
+        font-size: 18px;
+    }
+    .form-text {
+        width: 207px;
+        height: 32px;
+        margin: 15px 0 15px 0;
+        font-size: 7.57px;
+        font-weight: 400;
+        line-height: 11.16px;
+        text-align: right;
+
+    }
+    .form-btn {
+        width: 147px;
+        height: 39px;
+        padding: 9px 16px 9px 16px;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 580px) {
+    .app-modal {
+        width: 370px;
+        padding: 15px 10px;
+    }
+    .app-modal_icon svg {
+        font-size: 20px;
+    }
+    .app-undraw {
+        height: 195px;
+    }
+    .app-form {
+        width: 200px;
+        height: 263px;
+    }
+    .form-container {
+        margin-top: 7px;
+    }
+    .app-form .form-title {
+        width: 200px;
+        height: 30px;
+        font-family: Circe;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 30px;
+    }
+    .first-input {
+        margin-bottom: 10px;
+        box-shadow: 0 4px 0 #486DBC;
+    }
+    .form-container input {
+        width: 190px;
+        height: 40px;
+        font-size: 16px;
+    }
+    .form-text {
+        width: 190px;
+        height: 32px;
+        margin: 13px 0 10px 0;
+        font-size: 7px;
+        font-weight: 400;
+        line-height: 11.16px;
+        text-align: right;
+    }
+    .form-btn {
+        width: 137px;
+        height: 39px;
+        padding: 9px 16px 9px 16px;
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 360px) {
+    .app-modal {
+        width: 267px;
+        height: 411px;
+        padding: 15px;
+        position: relative;
+        z-index: 0;
+    }
+    .app-modal_container {
+        display: unset;
+    }
+    .app-modal_icon svg {
+        font-size: 18px;
+    }
+    .app-undraw {
+        position: absolute;
+        left: 14%;
+        bottom: 3%;
+        z-index: 0;
+        width: 75%;
+        height: 185px;
+    }
+    .app-undraw img {
+        opacity: 0.5;
+    }
+    .app-form {
+        position: absolute;
+        width: 217px;
+        height: 263px;
+    }
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-top: 7px;
+    }
+    .app-form .form-title {
+        width: 124px;
+        height: 60px;
+        font-family: Circe;
+        font-weight: 700;
+        line-height: 30px;
+        font-size: 20px;
+        line-height: 29.48px;
+        letter-spacing: -0.02em;
+        text-align: left;
+    }
+    .first-input {
+        margin-bottom: 17px;
+    }
+    .form-container input {
+        width: 190px;
+        height: 40px;
+        font-size: 14px;
+    }
+    .form-text {
+        width: 217px;
+        height: 32px;
+        margin: 23px 0 19px 0;
+        font-size: 7px;
+        font-weight: 400;
+        line-height: 11.16px;
+        text-align: left;
+    }
+    .form-btn {
+        width: 108px;
+        height: 29px;
+        padding: 6px 9px 6px 9px;
+        font-size: 11px;
+    }
+}
