@@ -1,0 +1,21 @@
+.notification {
+    position: fixed;
+    top: 5%;
+    left: -100%;
+    width: 100%;
+    color: white;
+    height: 40px;
+    transition: left 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.visible {
+    left: 0;
+}  
+.success {
+    background-color: #28a745; 
+} 
+.error {
+    background-color: #dc3545;
+}

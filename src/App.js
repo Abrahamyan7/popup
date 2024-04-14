@@ -1,18 +1,25 @@
 import { useState } from 'react';
 import './App.css';
 import Popup from './components/popup/popup';
+import Notification from './components/notification/notification';
 
 function App() {
 
   const [open, setOpen] = useState(false)
+  const [isAlertVisible, setAlertVisible] = useState(false);
+  const handleOpenModal = () => {
+    setOpen(!open)
+    setAlertVisible(false)
+  }
 
 
   return (
     <div className="App">
-      <Popup open={open} setOpen={setOpen} />
+     {isAlertVisible &&  <Notification  type="success" message="You are welcome" />  } 
+      <Popup open={open} setOpen={setOpen} isAlertVisible={isAlertVisible} setAlertVisible={setAlertVisible}/>
       <header className='header'></header>
       <div className='app-body'>
-        <button onClick={() => setOpen(!open)} className="btuON">Консультация</button>
+        <button onClick={handleOpenModal} className="btuON">Консультация</button>
       </div>
       <div className='footer'></div>
     </div>

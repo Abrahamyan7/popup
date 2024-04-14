@@ -1,10 +1,51 @@
 import { IoCloseOutline } from "react-icons/io5";
 import popup from "./../../Images/popup.png"
 import "./popup.css";
+import { useCallback, useState } from "react";
+import Notification from "../notification/notification";
 
 
-function Modal(props) {
-    function handelClik(event) {
+
+
+
+function Modal({setOpen, open, setAlertVisible}) {
+    const [firstname, setFirstname] = useState("");
+    const [username, setUsername] = useState("");
+
+
+    const handleFormDataClick = useCallback(async () => {
+        // if (!isFormValid) return;
+    
+        try {
+        //   setIsLoading(true);
+          const response = await fetch("https://ssttoorree.ru/_receive_question_", {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                firstname,
+                username,
+                from: "store_engineering"
+            }),
+
+          });
+          if(response.ok ){
+            
+            setOpen(false)
+            setAlertVisible(true);
+          }
+        //   setIsLoading(false);
+         
+        //   setIsError(false);
+        } catch (error) {
+        //   setIsLoading(false);
+        //   setIsError(true);
+        }
+      }, [username, firstname, setOpen]);
+
+
+    function handleClick(event) {
         event.stopPropagation();
     }
     function handleSubmit(event) {
@@ -12,12 +53,13 @@ function Modal(props) {
     }
 
     return (
-        <div className={`${"Overlay"} ${props.open ? "show" : ""}`}
-            onClick={() => props.setOpen(false)}
+        <div className={`${"Overlay"} ${open ? "show" : ""}`}
+            onClick={() => setOpen(false)}
         >
-            <div className="app-modal" onClick={(event) => handelClik(event)}>
+          
+            <div className="app-modal" onClick={(event) => handleClick(event)}>
                 <div className="app-modal_icon">
-                    <IoCloseOutline onClick={() => props.setOpen(!props.open)} />
+                    <IoCloseOutline onClick={() => setOpen(!open)} />
                 </div>
                 <div className="app-modal_container">
                     <div className="app-undraw">
@@ -27,10 +69,10 @@ function Modal(props) {
                         <h3 className="form-title">Получить консультацию</h3>
                         <form className="form-container" onSubmit={(e) => handleSubmit(e)} >
                             <div>
-                                <input className="first-input" placeholder="Ваше имя" />
+                                <input className="first-input" placeholder="Ваше имя" value={firstname} onChange={e => setFirstname(e.target.value)}/>
                             </div>
                             <div>
-                                <input className="second-input" placeholder="Ваш телефон" />
+                                <input  type="number" className="second-input" placeholder="Ваш телефон" value={username}  onChange={e => setUsername(e.target.value)}/>
                             </div>
                             <p className="form-text">
                                 Нажимая “Отправить” вы
@@ -38,7 +80,7 @@ function Modal(props) {
                                 ваших персональных данных в
                                 соответствии с политикой обработки персональных данных.
                             </p>
-                            <button className="form-btn">Отправить запрос</button>
+                            <button className="form-btn"  onClick={handleFormDataClick}>Отправить запрос</button>
                         </form>
                     </div>
                 </div>

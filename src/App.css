@@ -7,6 +7,21 @@
 .App {
   position: relative;
 }
+.success{
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  
+}
+.success button{
+  padding: 10px 15px;
+  background-color: rgb(25, 202, 25);
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
 .header{
   height: 20vh;
   background-color: rgb(107, 107, 107);
